@@ -245,6 +245,8 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      // Static previews (e.g. GitHub Pages) have no /api/contact endpoint
+      if (location.hostname.endsWith('github.io')) { show('Preview only: the form isn’t connected yet. On the live site this sends straight to the team.', true); return; }
       const label = btn.textContent; btn.textContent = 'Sending…';
       try {
         const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
