@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ImageAiD | Concept C, Flow</title>
+<meta name="description" content="Design concept C for ImageAiD: kinetic, generative direction.">
+<meta name="theme-color" content="#f5f4ef">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/familjen-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <div class="wrap">
+    <a class="mark" href="#">imageaid</a>
+    <nav aria-label="Primary"><a href="#why">Why</a><a href="#signal">Signal</a><a href="#how">How</a><a href="#team">Team</a><a href="#contact">Contact</a></nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="sheet" data-menu>Menu <i></i></button>
+  </div>
+</header>
+<nav class="sheet" id="sheet" aria-label="Menu" hidden data-sheet>
+  <a href="#why">Why</a><a href="#signal">Signal</a><a href="#how">How</a><a href="#team">Team</a><a href="#contact">Contact</a>
+  <p class="mono">Investigational device. Not FDA cleared.</p>
+</nav>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h">
+    <canvas class="flow" data-flow aria-hidden="true"></canvas>
+    <div class="wrap hero-inner">
+      <h1 id="h"><span class="w"><span>See the</span></span><span class="w"><span><span class="r">flow</span>, not</span></span><span class="w"><span>the number.</span></span></h1>
+    </div>
+    <div class="wrap hero-foot">
+      <p>ImageAiD is developing a handheld Doppler platform that reads tibial arterial flow at the point of care. No cuff, no occlusion.</p>
+      <div class="live" aria-hidden="true"><canvas width="240" height="72" data-trace></canvas><span class="mono">Velocity<b>Triphasic</b></span></div>
+      <a class="pill-btn" href="#contact">Get in touch <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div>Noninvasive<i>&bull;</i>Point of care<i>&bull;</i>No occlusion<i>&bull;</i>Tibial waveforms<i>&bull;</i>Noninvasive<i>&bull;</i>Point of care<i>&bull;</i>No occlusion<i>&bull;</i>Tibial waveforms<i>&bull;</i></div></div>
+
+  <section class="sec" id="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <p class="sec-label mono">Why it matters</p>
+      <h2 id="why-h">The cuff can&rsquo;t read <span class="soft">a stiff artery.</span></h2>
+      <div class="rail" tabindex="0" aria-label="Problem cards, scroll horizontally">
+        <article class="card"><span class="big">6.5M+</span><div><h3>Living with PAD</h3><p>U.S. adults aged 40 and older, per the CDC. Many don&rsquo;t know it.</p></div></article>
+        <article class="card k"><span class="big">&gt;1.40</span><div><h3>Off the scale</h3><p>Calcified arteries resist the cuff. The ankle-brachial index reads high and can&rsquo;t rule disease out.</p></div></article>
+        <article class="card r"><span class="big">Late</span><div><h3>Costs more</h3><p>Found later, vascular disease is associated with worse outcomes and heavier treatment.</p></div></article>
+      </div>
+      <div class="rail-hint mono"><span>Swipe</span><span>1 / 3</span></div>
+    </div>
+  </section>
+
+  <section class="sec cobalt" id="signal" aria-labelledby="sig-h">
+    <div class="wrap">
+      <p class="sec-label mono">The signal</p>
+      <h2 id="sig-h">Disease changes the shape of flow. <span class="soft">We&rsquo;re building to read it.</span></h2>
+      <div class="waves">
+        <article class="wv">
+          <div class="wv-top"><h3>Triphasic</h3><span class="mono">Typical normal</span></div>
+          <svg viewBox="0 0 400 100" aria-hidden="true"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path id="p-tri" d="M0.0 69.9 L2.5 69.7 L5.0 69.3 L7.5 68.5 L10.0 66.7 L12.5 63.6 L15.0 58.6 L17.5 51.5 L20.0 42.4 L22.5 32.4 L25.0 23.1 L27.5 16.4 L30.0 14.1 L32.5 16.6 L35.0 23.4 L37.5 33.1 L40.0 43.8 L42.5 53.9 L45.0 62.5 L47.5 69.6 L50.0 75.2 L52.5 79.5 L55.0 82.7 L57.5 84.8 L60.0 85.5 L62.5 84.8 L65.0 83.0 L67.5 80.3 L70.0 77.1 L72.5 74.0 L75.0 71.0 L77.5 68.5 L80.0 66.4 L82.5 64.9 L85.0 63.9 L87.5 63.4 L90.0 63.5 L92.5 64.0 L95.0 64.7 L97.5 65.7 L100.0 66.7 L102.5 67.7 L105.0 68.4 L107.5 69.0 L110.0 69.4 L112.5 69.7 L115.0 69.8 L117.5 69.9 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 69.9 L202.5 69.7 L205.0 69.3 L207.5 68.5 L210.0 66.7 L212.5 63.6 L215.0 58.6 L217.5 51.5 L220.0 42.4 L222.5 32.4 L225.0 23.1 L227.5 16.4 L230.0 14.1 L232.5 16.6 L235.0 23.4 L237.5 33.1 L240.0 43.8 L242.5 53.9 L245.0 62.5 L247.5 69.6 L250.0 75.2 L252.5 79.5 L255.0 82.7 L257.5 84.8 L260.0 85.5 L262.5 84.8 L265.0 83.0 L267.5 80.3 L270.0 77.1 L272.5 74.0 L275.0 71.0 L277.5 68.5 L280.0 66.4 L282.5 64.9 L285.0 63.9 L287.5 63.4 L290.0 63.5 L292.5 64.0 L295.0 64.7 L297.5 65.7 L300.0 66.7 L302.5 67.7 L305.0 68.4 L307.5 69.0 L310.0 69.4 L312.5 69.7 L315.0 69.8 L317.5 69.9 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 69.9"/><circle class="dot" r="5"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#p-tri"/></animateMotion></circle></svg>
+          <p>Sharp upstroke, a brief reversal, then a small forward wave.</p>
+        </article>
+        <article class="wv">
+          <div class="wv-top"><h3>Biphasic</h3><span class="mono">Changing</span></div>
+          <svg viewBox="0 0 400 100" aria-hidden="true"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path id="p-bi" d="M0.0 69.7 L2.5 69.4 L5.0 68.9 L7.5 67.8 L10.0 66.1 L12.5 63.5 L15.0 59.7 L17.5 54.7 L20.0 48.7 L22.5 42.2 L25.0 35.8 L27.5 30.5 L30.0 27.2 L32.5 26.4 L35.0 28.4 L37.5 32.7 L40.0 38.8 L42.5 45.7 L45.0 52.6 L47.5 59.0 L50.0 64.5 L52.5 69.0 L55.0 72.5 L57.5 75.1 L60.0 76.9 L62.5 77.9 L65.0 78.2 L67.5 77.8 L70.0 77.0 L72.5 75.8 L75.0 74.6 L77.5 73.4 L80.0 72.3 L82.5 71.5 L85.0 70.9 L87.5 70.5 L90.0 70.3 L92.5 70.1 L95.0 70.1 L97.5 70.0 L100.0 70.0 L102.5 70.0 L105.0 70.0 L107.5 70.0 L110.0 70.0 L112.5 70.0 L115.0 70.0 L117.5 70.0 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 69.7 L202.5 69.4 L205.0 68.9 L207.5 67.8 L210.0 66.1 L212.5 63.5 L215.0 59.7 L217.5 54.7 L220.0 48.7 L222.5 42.2 L225.0 35.8 L227.5 30.5 L230.0 27.2 L232.5 26.4 L235.0 28.4 L237.5 32.7 L240.0 38.8 L242.5 45.7 L245.0 52.6 L247.5 59.0 L250.0 64.5 L252.5 69.0 L255.0 72.5 L257.5 75.1 L260.0 76.9 L262.5 77.9 L265.0 78.2 L267.5 77.8 L270.0 77.0 L272.5 75.8 L275.0 74.6 L277.5 73.4 L280.0 72.3 L282.5 71.5 L285.0 70.9 L287.5 70.5 L290.0 70.3 L292.5 70.1 L295.0 70.1 L297.5 70.0 L300.0 70.0 L302.5 70.0 L305.0 70.0 L307.5 70.0 L310.0 70.0 L312.5 70.0 L315.0 70.0 L317.5 70.0 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 69.7"/><circle class="dot" r="5"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#p-bi"/></animateMotion></circle></svg>
+          <p>The late forward wave drops out. The reversal remains.</p>
+        </article>
+        <article class="wv">
+          <div class="wv-top"><h3>Monophasic</h3><span class="mono">Dampened</span></div>
+          <svg viewBox="0 0 400 100" aria-hidden="true"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path id="p-mono" d="M0.0 70.0 L2.5 70.0 L5.0 69.9 L7.5 69.9 L10.0 69.7 L12.5 69.4 L15.0 68.9 L17.5 68.0 L20.0 66.7 L22.5 64.8 L25.0 62.3 L27.5 59.3 L30.0 55.9 L32.5 52.5 L35.0 49.4 L37.5 46.9 L40.0 45.2 L42.5 44.4 L45.0 44.5 L47.5 45.4 L50.0 46.8 L52.5 48.7 L55.0 50.8 L57.5 52.9 L60.0 55.1 L62.5 57.2 L65.0 59.1 L67.5 60.9 L70.0 62.4 L72.5 63.8 L75.0 65.0 L77.5 66.0 L80.0 66.9 L82.5 67.6 L85.0 68.2 L87.5 68.6 L90.0 69.0 L92.5 69.2 L95.0 69.4 L97.5 69.6 L100.0 69.7 L102.5 69.8 L105.0 69.9 L107.5 69.9 L110.0 69.9 L112.5 70.0 L115.0 70.0 L117.5 70.0 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 70.0 L202.5 70.0 L205.0 69.9 L207.5 69.9 L210.0 69.7 L212.5 69.4 L215.0 68.9 L217.5 68.0 L220.0 66.7 L222.5 64.8 L225.0 62.3 L227.5 59.3 L230.0 55.9 L232.5 52.5 L235.0 49.4 L237.5 46.9 L240.0 45.2 L242.5 44.4 L245.0 44.5 L247.5 45.4 L250.0 46.8 L252.5 48.7 L255.0 50.8 L257.5 52.9 L260.0 55.1 L262.5 57.2 L265.0 59.1 L267.5 60.9 L270.0 62.4 L272.5 63.8 L275.0 65.0 L277.5 66.0 L280.0 66.9 L282.5 67.6 L285.0 68.2 L287.5 68.6 L290.0 69.0 L292.5 69.2 L295.0 69.4 L297.5 69.6 L300.0 69.7 L302.5 69.8 L305.0 69.9 L307.5 69.9 L310.0 69.9 L312.5 70.0 L315.0 70.0 L317.5 70.0 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 70.0"/><circle class="dot" r="5"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#p-mono"/></animateMotion></circle></svg>
+          <p>Slow rise, rounded peak, no reversal. Calcification doesn&rsquo;t mask it.</p>
+        </article>
+      </div>
+      <p class="mono note">Illustrations, not device output.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <p class="sec-label mono">How it works</p>
+      <h2 id="how-h">One visit. <span class="soft">Three steps.</span></h2>
+      <div class="stack">
+        <article class="st"><span class="n">01</span><div><h3>Scan</h3><p>A handheld probe captures tibial waveforms in minutes, right in the exam room.</p></div></article>
+        <article class="st"><span class="n">02</span><div><h3>Analyze</h3><p>Software-supported interpretation of waveform shape, intended to aid clinical assessment.</p></div></article>
+        <article class="st"><span class="n">03</span><div><h3>Act</h3><p>Structured output designed to fit the clinical workflow and the next decision.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="team" aria-labelledby="team-h">
+    <div class="wrap">
+      <p class="sec-label mono">Team</p>
+      <h2 id="team-h">The people <span class="soft">behind it.</span></h2>
+      <span class="ph-flag mono">Placeholder names</span>
+      <div class="people">
+        <div class="person"><b>Full Name</b><span class="mono">Founder &amp; CEO</span></div>
+        <div class="person"><b>Full Name</b><span class="mono">CTO</span></div>
+        <div class="person"><b>Full Name</b><span class="mono">Clinical Lead</span></div>
+        <div class="person"><b>Full Name</b><span class="mono">Advisor, Vascular</span></div>
+        <div class="person"><b>Full Name</b><span class="mono">Advisor, Regulatory</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact" aria-labelledby="c-h">
+    <div class="wrap split">
+      <div>
+        <p class="sec-label mono">Contact</p>
+        <h2 id="c-h"><a href="mailto:hello@imageaid.us">Say hello.</a></h2>
+        <p class="fine">Clinical partners, health systems, investors, press.</p>
+      </div>
+      <form class="cform" action="/api/contact" method="post">
+        <fieldset class="chips full"><legend class="visually-hidden">I am a</legend>
+          <label><input type="radio" name="interest" value="Clinician" checked><span>Clinician</span></label>
+          <label><input type="radio" name="interest" value="Health system"><span>Health system</span></label>
+          <label><input type="radio" name="interest" value="Investor"><span>Investor</span></label>
+          <label><input type="radio" name="interest" value="Press"><span>Press</span></label>
+        </fieldset>
+        <div class="cf"><label class="visually-hidden" for="c-name">Name</label><input id="c-name" name="name" placeholder="Name" autocomplete="name" required></div>
+        <div class="cf"><label class="visually-hidden" for="c-email">Email</label><input id="c-email" name="email" type="email" placeholder="Email" autocomplete="email" required></div>
+        <div class="cf full"><label class="visually-hidden" for="c-msg">Message</label><textarea id="c-msg" name="message" placeholder="What are you working on?" required></textarea></div>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button class="pill-btn" type="submit">Send <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button></div>
+        <p class="fine full">Please don&rsquo;t include patient information.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <p class="giant" aria-hidden="true">imageaid<span>.</span></p>
+    <div class="row mono"><span>&copy; 2026 ImageAiD</span><a href="mailto:hello@imageaid.us">hello@imageaid.us</a><span>Concept C &middot; Flow</span></div>
+    <p class="disc">The ImageAiD platform is an investigational device. It has not been cleared or approved by the U.S. FDA and is not available for sale. Statements here describe design goals, not demonstrated safety or effectiveness.</p>
+  </div>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>
