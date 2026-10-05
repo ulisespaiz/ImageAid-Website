@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ImageAiD | Vascular screening that reads the waveform</title>
 <meta name="description" content="ImageAiD is developing a portable, noninvasive Doppler platform that reads tibial arterial waveforms at the point of care, without cuff occlusion.">
-<meta name="theme-color" content="#040809">
+<meta name="theme-color" content="#ffffff">
+<!-- TODO(launch): remove noindex once this is live on the real domain -->
+<meta name="robots" content="noindex">
 <!-- TODO(domain): add canonical + og:url once the new domain is final -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="ImageAiD | Vascular screening that reads the waveform">
@@ -23,21 +25,21 @@
 <header class="hdr" data-hdr>
   <div class="wrap">
     <a class="brand" href="/" aria-label="ImageAiD home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#24495e" stroke="#3fd0bd" stroke-opacity=".5"/><path d="M4.5 17h5l2-6 3.5 11 3-9 1.6 4H27.5" fill="none" stroke="#3fd0bd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Image<i>AiD</i></b></a>
-    <nav class="nav" aria-label="Primary"><a href="/#problem">Problem</a><a href="/#approach">Approach</a><a href="/#how">How it works</a><a href="/team.html">Team</a><a class="cta" href="/#contact">Get in touch</a></nav>
+    <nav class="nav" aria-label="Primary"><a href="/#problem">Problem</a><a href="/#approach">Solution</a><a href="/#how">How It Works</a><a href="/team.html">Team</a><a class="cta" href="/#contact">Get in touch</a></nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet" data-menu-btn>Menu <span class="bars" aria-hidden="true"></span></button>
   </div>
 </header>
 <nav class="sheet" id="sheet" aria-label="Menu" hidden data-sheet>
-  <a href="/#problem">Problem <span>01</span></a><a href="/#approach">Approach <span>02</span></a><a href="/#how">How it works <span>03</span></a><a href="/team.html">Team <span>04</span></a>
+  <a href="/#problem">Problem <span>01</span></a><a href="/#approach">Solution <span>02</span></a><a href="/#how">How It Works <span>03</span></a><a href="/team.html">Team <span>04</span></a>
   <a class="btn btn-signal" href="/#contact">Get in touch <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   <p class="mono">Investigational device &middot; Not FDA cleared</p>
 </nav>
 
 <main id="main">
-  <section class="hero" aria-labelledby="h">
+  <section class="hero dark" aria-labelledby="h">
     <div class="wrap">
       <span class="eyebrow mono">Vascular diagnostics &middot; In development</span>
-      <h1 id="h">Vascular screening that reads the <em>waveform</em>.</h1>
+      <h1 id="h">Reimagining <em>vascular</em> diagnostics.</h1>
     </div>
     <div class="beam-stage" data-beam>
       <canvas class="beam-particles" data-ambient aria-hidden="true"></canvas>
@@ -80,10 +82,10 @@
     <div class="wrap">
       <div class="beam-labels mono" aria-hidden="true"><span>Raw Doppler signal</span><span>Probe</span><span>Waveform</span></div>
       <div class="hero-copy">
-        <p><strong>A cuff gives you a ratio. Flow gives you a shape.</strong> ImageAiD is developing a portable Doppler platform that captures tibial arterial waveforms at the point of care, with no cuff occlusion.</p>
+        <p><strong>A noninvasive, point-of-care Doppler platform designed to support vascular assessment.</strong> ImageAiD reads the shape of tibial arterial flow, not just a pressure ratio, with no cuff occlusion.</p>
         <div class="actions">
           <a class="btn btn-signal" href="#contact">Get in touch <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a class="btn btn-ghost" href="#approach">See the signal</a>
+          <a class="btn btn-ghost" href="#problem">Learn more</a>
         </div>
       </div>
     </div>
@@ -99,7 +101,7 @@
 
   <section class="sec" id="problem" aria-labelledby="p-h">
     <div class="wrap">
-      <div class="sec-head"><span class="mono">The gap</span><h2 id="p-h">The standard screen has a blind spot.</h2><p>The ankle-brachial index is fast and cheap. For the patients who need it most, it&rsquo;s also the least reliable.</p></div>
+      <div class="sec-head"><span class="mono">The gap</span><h2 id="p-h">The gap in vascular diagnostics.</h2><p>Current screening methods leave room for improvement. The ankle-brachial index is fast and cheap, but for the patients who need it most, it&rsquo;s also the least reliable.</p></div>
       <div class="cards">
         <article class="card"><span class="k">PAD</span><h3>ABI can miss high-risk patients</h3><p>In diabetes and chronic kidney disease, ABI alone can return false negatives and delay the next test.</p></article>
         <article class="card hot"><span class="k">&gt; 1.40</span><h3>Calcified arteries break the cuff</h3><p>Medial calcification makes vessels noncompressible. The ankle reads high and the ratio stops meaning much.</p></article>
@@ -111,7 +113,7 @@
 
   <section class="sec" id="approach" aria-labelledby="a-h">
     <div class="wrap">
-      <div class="sec-head"><span class="mono">Our approach</span><h2 id="a-h">Pressure is a number. Flow has a shape.</h2><p>As disease narrows an artery, the Doppler waveform downstream changes in a recognizable way, and calcification doesn&rsquo;t distort it the way it distorts cuff pressure. That&rsquo;s the signal ImageAiD is built around.</p></div>
+      <div class="sec-head"><span class="mono">Solution</span><h2 id="a-h">A smarter approach to vascular screening.</h2><p>As disease narrows an artery, the Doppler waveform downstream changes in a recognizable way, and calcification doesn&rsquo;t distort it the way it distorts cuff pressure. That&rsquo;s the signal ImageAiD is built around.</p></div>
       <div class="waves">
         <article class="wv tri"><div class="wv-top"><h3>Triphasic</h3><span class="mono">Typical normal</span></div><svg class="sc-wave" viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true"><line class="ax" x1="0" y1="78" x2="400" y2="78"/><path class="tr" d="M0.0 77.9 L2.5 77.7 L5.0 77.3 L7.5 76.3 L10.0 74.4 L12.5 70.9 L15.0 65.4 L17.5 57.5 L20.0 47.5 L22.5 36.4 L25.0 26.1 L27.5 18.7 L30.0 16.1 L32.5 18.8 L35.0 26.4 L37.5 37.1 L40.0 48.9 L42.5 60.1 L45.0 69.7 L47.5 77.5 L50.0 83.7 L52.5 88.5 L55.0 92.1 L57.5 94.3 L60.0 95.1 L62.5 94.4 L65.0 92.3 L67.5 89.4 L70.0 85.9 L72.5 82.4 L75.0 79.1 L77.5 76.3 L80.0 74.1 L82.5 72.4 L85.0 71.3 L87.5 70.7 L90.0 70.8 L92.5 71.3 L95.0 72.2 L97.5 73.3 L100.0 74.4 L102.5 75.4 L105.0 76.2 L107.5 76.9 L110.0 77.3 L112.5 77.6 L115.0 77.8 L117.5 77.9 L120.0 78.0 L122.5 78.0 L125.0 78.0 L127.5 78.0 L130.0 78.0 L132.5 78.0 L135.0 78.0 L137.5 78.0 L140.0 78.0 L142.5 78.0 L145.0 78.0 L147.5 78.0 L150.0 78.0 L152.5 78.0 L155.0 78.0 L157.5 78.0 L160.0 78.0 L162.5 78.0 L165.0 78.0 L167.5 78.0 L170.0 78.0 L172.5 78.0 L175.0 78.0 L177.5 78.0 L180.0 78.0 L182.5 78.0 L185.0 78.0 L187.5 78.0 L190.0 78.0 L192.5 78.0 L195.0 78.0 L197.5 78.0 L200.0 77.9 L202.5 77.7 L205.0 77.3 L207.5 76.3 L210.0 74.4 L212.5 70.9 L215.0 65.4 L217.5 57.5 L220.0 47.5 L222.5 36.4 L225.0 26.1 L227.5 18.7 L230.0 16.1 L232.5 18.8 L235.0 26.4 L237.5 37.1 L240.0 48.9 L242.5 60.1 L245.0 69.7 L247.5 77.5 L250.0 83.7 L252.5 88.5 L255.0 92.1 L257.5 94.3 L260.0 95.1 L262.5 94.4 L265.0 92.3 L267.5 89.4 L270.0 85.9 L272.5 82.4 L275.0 79.1 L277.5 76.3 L280.0 74.1 L282.5 72.4 L285.0 71.3 L287.5 70.7 L290.0 70.8 L292.5 71.3 L295.0 72.2 L297.5 73.3 L300.0 74.4 L302.5 75.4 L305.0 76.2 L307.5 76.9 L310.0 77.3 L312.5 77.6 L315.0 77.8 L317.5 77.9 L320.0 78.0 L322.5 78.0 L325.0 78.0 L327.5 78.0 L330.0 78.0 L332.5 78.0 L335.0 78.0 L337.5 78.0 L340.0 78.0 L342.5 78.0 L345.0 78.0 L347.5 78.0 L350.0 78.0 L352.5 78.0 L355.0 78.0 L357.5 78.0 L360.0 78.0 L362.5 78.0 L365.0 78.0 L367.5 78.0 L370.0 78.0 L372.5 78.0 L375.0 78.0 L377.5 78.0 L380.0 78.0 L382.5 78.0 L385.0 78.0 L387.5 78.0 L390.0 78.0 L392.5 78.0 L395.0 78.0 L397.5 78.0 L400.0 77.9"/></svg><p>Sharp upstroke, brief reversal, small late forward wave.</p></article>
         <article class="wv bi"><div class="wv-top"><h3>Biphasic</h3><span class="mono">Changing</span></div><svg class="sc-wave" viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true"><line class="ax" x1="0" y1="78" x2="400" y2="78"/><path class="tr" d="M0.0 77.7 L2.5 77.4 L5.0 76.7 L7.5 75.6 L10.0 73.7 L12.5 70.8 L15.0 66.6 L17.5 61.1 L20.0 54.5 L22.5 47.2 L25.0 40.2 L27.5 34.3 L30.0 30.6 L32.5 29.8 L35.0 31.9 L37.5 36.7 L40.0 43.4 L42.5 51.1 L45.0 58.8 L47.5 65.8 L50.0 71.9 L52.5 76.9 L55.0 80.8 L57.5 83.7 L60.0 85.6 L62.5 86.7 L65.0 87.0 L67.5 86.7 L70.0 85.7 L72.5 84.5 L75.0 83.1 L77.5 81.7 L80.0 80.6 L82.5 79.7 L85.0 79.0 L87.5 78.6 L90.0 78.3 L92.5 78.2 L95.0 78.1 L97.5 78.0 L100.0 78.0 L102.5 78.0 L105.0 78.0 L107.5 78.0 L110.0 78.0 L112.5 78.0 L115.0 78.0 L117.5 78.0 L120.0 78.0 L122.5 78.0 L125.0 78.0 L127.5 78.0 L130.0 78.0 L132.5 78.0 L135.0 78.0 L137.5 78.0 L140.0 78.0 L142.5 78.0 L145.0 78.0 L147.5 78.0 L150.0 78.0 L152.5 78.0 L155.0 78.0 L157.5 78.0 L160.0 78.0 L162.5 78.0 L165.0 78.0 L167.5 78.0 L170.0 78.0 L172.5 78.0 L175.0 78.0 L177.5 78.0 L180.0 78.0 L182.5 78.0 L185.0 78.0 L187.5 78.0 L190.0 78.0 L192.5 78.0 L195.0 78.0 L197.5 78.0 L200.0 77.7 L202.5 77.4 L205.0 76.7 L207.5 75.6 L210.0 73.7 L212.5 70.8 L215.0 66.6 L217.5 61.1 L220.0 54.5 L222.5 47.2 L225.0 40.2 L227.5 34.3 L230.0 30.6 L232.5 29.8 L235.0 31.9 L237.5 36.7 L240.0 43.4 L242.5 51.1 L245.0 58.8 L247.5 65.8 L250.0 71.9 L252.5 76.9 L255.0 80.8 L257.5 83.7 L260.0 85.6 L262.5 86.7 L265.0 87.0 L267.5 86.7 L270.0 85.7 L272.5 84.5 L275.0 83.1 L277.5 81.7 L280.0 80.6 L282.5 79.7 L285.0 79.0 L287.5 78.6 L290.0 78.3 L292.5 78.2 L295.0 78.1 L297.5 78.0 L300.0 78.0 L302.5 78.0 L305.0 78.0 L307.5 78.0 L310.0 78.0 L312.5 78.0 L315.0 78.0 L317.5 78.0 L320.0 78.0 L322.5 78.0 L325.0 78.0 L327.5 78.0 L330.0 78.0 L332.5 78.0 L335.0 78.0 L337.5 78.0 L340.0 78.0 L342.5 78.0 L345.0 78.0 L347.5 78.0 L350.0 78.0 L352.5 78.0 L355.0 78.0 L357.5 78.0 L360.0 78.0 L362.5 78.0 L365.0 78.0 L367.5 78.0 L370.0 78.0 L372.5 78.0 L375.0 78.0 L377.5 78.0 L380.0 78.0 L382.5 78.0 L385.0 78.0 L387.5 78.0 L390.0 78.0 L392.5 78.0 L395.0 78.0 L397.5 78.0 L400.0 77.7"/></svg><p>The late forward wave drops out.</p></article>
@@ -123,7 +125,7 @@
 
   <section class="sec" id="how" aria-labelledby="hw-h">
     <div class="wrap">
-      <div class="sec-head"><span class="mono">How it works</span><h2 id="hw-h">Three steps, one visit.</h2></div>
+      <div class="sec-head"><span class="mono">How it works</span><h2 id="hw-h">Three steps, one visit.</h2><p>Designed to support earlier identification and workflow efficiency.</p></div>
       <ol class="steps">
         <li class="step"><h3>Scan</h3><p>A handheld probe captures tibial waveforms in minutes at the point of care. No cuff, no occlusion.</p></li>
         <li class="step"><h3>Analyze</h3><p>Software-supported waveform interpretation, intended to aid clinical assessment.</p></li>
@@ -134,7 +136,7 @@
 
   <section class="sec" id="benefits" aria-labelledby="b-h">
     <div class="wrap">
-      <div class="sec-head"><span class="mono">Who it&rsquo;s for</span><h2 id="b-h">Designed for clinics, patients, and health systems.</h2></div>
+      <div class="sec-head"><span class="mono">Benefits</span><h2 id="b-h">Designed for clinics, patients, and health systems.</h2></div>
       <div class="tabs" data-tabs>
         <div class="tablist" role="tablist" aria-label="Audience">
           <button class="tab" role="tab" id="tab-c" aria-controls="panel-c" aria-selected="true">Clinics</button>
@@ -208,7 +210,7 @@
 
   <section class="sec contact" id="contact" aria-labelledby="c-h">
     <div class="wrap split">
-      <div class="sec-head"><span class="mono">Contact</span><h2 id="c-h">Let&rsquo;s talk.</h2><p>We&rsquo;re speaking with clinical partners, health systems, and investors. Tell us a little about yourself.</p></div>
+      <div class="sec-head"><span class="mono">Contact</span><h2 id="c-h">Interested in learning more?</h2><p>We&rsquo;re speaking with clinical partners, health systems, and investors. Tell us a little about yourself.</p></div>
       <form class="cform" id="contact-form" action="/api/contact" method="post" novalidate>
         <fieldset class="chips full"><legend>I&rsquo;m reaching out as</legend>
           <label><input type="radio" name="interest" value="Clinician or clinical site" checked><span>Clinician</span></label>
@@ -238,7 +240,7 @@
     <div class="wrap">
       <div class="top">
         <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#24495e" stroke="#3fd0bd" stroke-opacity=".5"/><path d="M4.5 17h5l2-6 3.5 11 3-9 1.6 4H27.5" fill="none" stroke="#3fd0bd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Image<i>AiD</i></b></a>
-        <nav aria-label="Footer"><a href="/#problem">Problem</a><a href="/#approach">Approach</a><a href="/#how">How it works</a><a href="/team.html">Team</a><a href="/#contact">Contact</a><a href="mailto:hello@imageaid.us">hello@imageaid.us</a></nav>
+        <nav aria-label="Footer"><a href="/#problem">Problem</a><a href="/#approach">Solution</a><a href="/#how">How It Works</a><a href="/team.html">Team</a><a href="/#contact">Contact</a><a href="mailto:hello@imageaid.us">hello@imageaid.us</a></nav>
       </div>
       <!-- TODO(regulatory): have regulatory counsel confirm this wording before launch -->
       <p class="disc"><strong>Caution: investigational device.</strong> The ImageAiD platform is in development. It has not been cleared or approved by the U.S. FDA and is not available for sale in the United States. Statements on this site describe design goals, not demonstrated safety or effectiveness.</p>
