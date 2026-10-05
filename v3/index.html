@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ImageAiD | Vascular screening that reads the waveform</title>
+<meta name="description" content="ImageAiD is developing a portable, noninvasive Doppler platform that reads tibial arterial waveforms at the point of care, without cuff occlusion.">
+<meta name="theme-color" content="#040809">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="v3.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="sr" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Electric Border filter, adapted from Bálint Ferenczy (numOctaves lowered for mobile GPUs) -->
+    <filter id="turbulent-displace" color-interpolation-filters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="4" result="noise1" seed="1"/>
+      <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1"><animate attributeName="dy" values="700; 0" dur="6s" repeatCount="indefinite" calcMode="linear"/></feOffset>
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="4" result="noise2" seed="1"/>
+      <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2"><animate attributeName="dy" values="0; -700" dur="6s" repeatCount="indefinite" calcMode="linear"/></feOffset>
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="4" result="noise3" seed="2"/>
+      <feOffset in="noise3" dx="0" dy="0" result="offsetNoise3"><animate attributeName="dx" values="490; 0" dur="6s" repeatCount="indefinite" calcMode="linear"/></feOffset>
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="4" result="noise4" seed="2"/>
+      <feOffset in="noise4" dx="0" dy="0" result="offsetNoise4"><animate attributeName="dx" values="0; -490" dur="6s" repeatCount="indefinite" calcMode="linear"/></feOffset>
+      <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1"/>
+      <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2"/>
+      <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise"/>
+      <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R" yChannelSelector="B"/>
+    </filter>
+  </defs>
+</svg>
+
+<header class="hdr" data-hdr>
+  <div class="wrap">
+    <a class="brand" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#24495e" stroke="#3fd0bd" stroke-opacity=".5"/><path d="M4.5 17h5l2-6 3.5 11 3-9 1.6 4H27.5" fill="none" stroke="#3fd0bd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Image<i>AiD</i></b></a>
+    <nav class="nav" aria-label="Primary"><a href="#problem">Problem</a><a href="#approach">Approach</a><a href="#how">How it works</a><a href="#team">Team</a><a class="cta" href="#contact">Get in touch</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu-btn>Menu <span class="bars" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<nav class="glass-menu" id="menu" aria-label="Menu" data-menu>
+  <span class="shine shine-top"></span><span class="shine shine-bottom"></span>
+  <span class="glow glow-top"></span><span class="glow glow-bottom"></span>
+  <span class="glow glow-bright glow-top"></span><span class="glow glow-bright glow-bottom"></span>
+  <header>Navigate</header>
+  <ul>
+    <li><a href="#problem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.5h.01"/></svg>Problem</a></li><li><a href="#approach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l2-6 4 11 3-8 2 3h5"/></svg>Approach</a></li><li><a href="#how"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><path d="M6 8v8M10 6h10M10 18h10M10 12h10"/></svg>How it works</a></li><li><a href="#team"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 0 1 0 6M21 20c0-2.6-1.7-4.9-4-5.7"/></svg>Team</a></li>
+    <li><hr></li>
+    <li><a class="cta" href="#contact"><span>Get in touch</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+  </ul>
+</nav>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h">
+    <div class="wrap">
+      <span class="eyebrow mono">Vascular diagnostics &middot; In development</span>
+      <h1 id="h">Vascular screening that reads the <em>waveform</em>.</h1>
+    </div>
+
+    <div class="beam-stage" data-beam>
+      <canvas class="beam-particles" data-ambient aria-hidden="true"></canvas>
+      <div class="card-line" data-line>
+          <div class="scan-card tri" aria-hidden="true">
+            <div class="sc-clean"><div class="sc-top"><b>Post. tibial</b><span>L &middot; #01</span></div><svg class="sc-wave" viewBox="0 0 400 100" preserveAspectRatio="none"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path class="tr" d="M0.0 69.9 L2.5 69.7 L5.0 69.3 L7.5 68.5 L10.0 66.8 L12.5 63.7 L15.0 58.8 L17.5 51.8 L20.0 42.9 L22.5 33.1 L25.0 23.9 L27.5 17.4 L30.0 15.1 L32.5 17.5 L35.0 24.3 L37.5 33.8 L40.0 44.2 L42.5 54.1 L45.0 62.7 L47.5 69.6 L50.0 75.1 L52.5 79.3 L55.0 82.5 L57.5 84.5 L60.0 85.2 L62.5 84.5 L65.0 82.7 L67.5 80.1 L70.0 77.0 L72.5 73.9 L75.0 71.0 L77.5 68.5 L80.0 66.5 L82.5 65.0 L85.0 64.0 L87.5 63.6 L90.0 63.6 L92.5 64.1 L95.0 64.8 L97.5 65.8 L100.0 66.8 L102.5 67.7 L105.0 68.4 L107.5 69.0 L110.0 69.4 L112.5 69.7 L115.0 69.8 L117.5 69.9 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 69.9 L202.5 69.7 L205.0 69.3 L207.5 68.5 L210.0 66.8 L212.5 63.7 L215.0 58.8 L217.5 51.8 L220.0 42.9 L222.5 33.1 L225.0 23.9 L227.5 17.4 L230.0 15.1 L232.5 17.5 L235.0 24.3 L237.5 33.8 L240.0 44.2 L242.5 54.1 L245.0 62.7 L247.5 69.6 L250.0 75.1 L252.5 79.3 L255.0 82.5 L257.5 84.5 L260.0 85.2 L262.5 84.5 L265.0 82.7 L267.5 80.1 L270.0 77.0 L272.5 73.9 L275.0 71.0 L277.5 68.5 L280.0 66.5 L282.5 65.0 L285.0 64.0 L287.5 63.6 L290.0 63.6 L292.5 64.1 L295.0 64.8 L297.5 65.8 L300.0 66.8 L302.5 67.7 L305.0 68.4 L307.5 69.0 L310.0 69.4 L312.5 69.7 L315.0 69.8 L317.5 69.9 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 69.9"/></svg><div class="sc-bot"><b>Triphasic</b><span>Illustrative</span></div></div>
+            <div class="sc-raw"><pre></pre></div>
+          </div>
+          <div class="scan-card bi" aria-hidden="true">
+            <div class="sc-clean"><div class="sc-top"><b>Ant. tibial</b><span>R &middot; #02</span></div><svg class="sc-wave" viewBox="0 0 400 100" preserveAspectRatio="none"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path class="tr" d="M0.0 69.7 L2.5 69.4 L5.0 68.9 L7.5 67.9 L10.0 66.2 L12.5 63.6 L15.0 59.9 L17.5 55.0 L20.0 49.1 L22.5 42.7 L25.0 36.4 L27.5 31.2 L30.0 28.0 L32.5 27.2 L35.0 29.1 L37.5 33.4 L40.0 39.3 L42.5 46.1 L45.0 52.9 L47.5 59.2 L50.0 64.6 L52.5 69.0 L55.0 72.5 L57.5 75.0 L60.0 76.8 L62.5 77.7 L65.0 78.0 L67.5 77.7 L70.0 76.9 L72.5 75.7 L75.0 74.5 L77.5 73.3 L80.0 72.3 L82.5 71.5 L85.0 70.9 L87.5 70.5 L90.0 70.3 L92.5 70.1 L95.0 70.1 L97.5 70.0 L100.0 70.0 L102.5 70.0 L105.0 70.0 L107.5 70.0 L110.0 70.0 L112.5 70.0 L115.0 70.0 L117.5 70.0 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 69.7 L202.5 69.4 L205.0 68.9 L207.5 67.9 L210.0 66.2 L212.5 63.6 L215.0 59.9 L217.5 55.0 L220.0 49.1 L222.5 42.7 L225.0 36.4 L227.5 31.2 L230.0 28.0 L232.5 27.2 L235.0 29.1 L237.5 33.4 L240.0 39.3 L242.5 46.1 L245.0 52.9 L247.5 59.2 L250.0 64.6 L252.5 69.0 L255.0 72.5 L257.5 75.0 L260.0 76.8 L262.5 77.7 L265.0 78.0 L267.5 77.7 L270.0 76.9 L272.5 75.7 L275.0 74.5 L277.5 73.3 L280.0 72.3 L282.5 71.5 L285.0 70.9 L287.5 70.5 L290.0 70.3 L292.5 70.1 L295.0 70.1 L297.5 70.0 L300.0 70.0 L302.5 70.0 L305.0 70.0 L307.5 70.0 L310.0 70.0 L312.5 70.0 L315.0 70.0 L317.5 70.0 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 69.7"/></svg><div class="sc-bot"><b>Biphasic</b><span>Illustrative</span></div></div>
+            <div class="sc-raw"><pre></pre></div>
+          </div>
+          <div class="scan-card tri" aria-hidden="true">
+            <div class="sc-clean"><div class="sc-top"><b>Dorsalis pedis</b><span>R &middot; #03</span></div><svg class="sc-wave" viewBox="0 0 400 100" preserveAspectRatio="none"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path class="tr" d="M0.0 69.9 L2.5 69.7 L5.0 69.3 L7.5 68.5 L10.0 66.8 L12.5 63.7 L15.0 58.8 L17.5 51.8 L20.0 42.9 L22.5 33.1 L25.0 23.9 L27.5 17.4 L30.0 15.1 L32.5 17.5 L35.0 24.3 L37.5 33.8 L40.0 44.2 L42.5 54.1 L45.0 62.7 L47.5 69.6 L50.0 75.1 L52.5 79.3 L55.0 82.5 L57.5 84.5 L60.0 85.2 L62.5 84.5 L65.0 82.7 L67.5 80.1 L70.0 77.0 L72.5 73.9 L75.0 71.0 L77.5 68.5 L80.0 66.5 L82.5 65.0 L85.0 64.0 L87.5 63.6 L90.0 63.6 L92.5 64.1 L95.0 64.8 L97.5 65.8 L100.0 66.8 L102.5 67.7 L105.0 68.4 L107.5 69.0 L110.0 69.4 L112.5 69.7 L115.0 69.8 L117.5 69.9 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 69.9 L202.5 69.7 L205.0 69.3 L207.5 68.5 L210.0 66.8 L212.5 63.7 L215.0 58.8 L217.5 51.8 L220.0 42.9 L222.5 33.1 L225.0 23.9 L227.5 17.4 L230.0 15.1 L232.5 17.5 L235.0 24.3 L237.5 33.8 L240.0 44.2 L242.5 54.1 L245.0 62.7 L247.5 69.6 L250.0 75.1 L252.5 79.3 L255.0 82.5 L257.5 84.5 L260.0 85.2 L262.5 84.5 L265.0 82.7 L267.5 80.1 L270.0 77.0 L272.5 73.9 L275.0 71.0 L277.5 68.5 L280.0 66.5 L282.5 65.0 L285.0 64.0 L287.5 63.6 L290.0 63.6 L292.5 64.1 L295.0 64.8 L297.5 65.8 L300.0 66.8 L302.5 67.7 L305.0 68.4 L307.5 69.0 L310.0 69.4 L312.5 69.7 L315.0 69.8 L317.5 69.9 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 69.9"/></svg><div class="sc-bot"><b>Triphasic</b><span>Illustrative</span></div></div>
+            <div class="sc-raw"><pre></pre></div>
+          </div>
+          <div class="scan-card mono-w" aria-hidden="true">
+            <div class="sc-clean"><div class="sc-top"><b>Post. tibial</b><span>R &middot; #04</span></div><svg class="sc-wave" viewBox="0 0 400 100" preserveAspectRatio="none"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path class="tr" d="M0.0 70.0 L2.5 70.0 L5.0 69.9 L7.5 69.9 L10.0 69.7 L12.5 69.4 L15.0 68.9 L17.5 68.0 L20.0 66.7 L22.5 64.9 L25.0 62.4 L27.5 59.5 L30.0 56.2 L32.5 52.8 L35.0 49.8 L37.5 47.3 L40.0 45.7 L42.5 44.9 L45.0 45.0 L47.5 45.8 L50.0 47.2 L52.5 49.1 L55.0 51.1 L57.5 53.2 L60.0 55.4 L62.5 57.4 L65.0 59.3 L67.5 61.0 L70.0 62.6 L72.5 63.9 L75.0 65.1 L77.5 66.1 L80.0 66.9 L82.5 67.6 L85.0 68.2 L87.5 68.6 L90.0 69.0 L92.5 69.2 L95.0 69.5 L97.5 69.6 L100.0 69.7 L102.5 69.8 L105.0 69.9 L107.5 69.9 L110.0 69.9 L112.5 70.0 L115.0 70.0 L117.5 70.0 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 70.0 L202.5 70.0 L205.0 69.9 L207.5 69.9 L210.0 69.7 L212.5 69.4 L215.0 68.9 L217.5 68.0 L220.0 66.7 L222.5 64.9 L225.0 62.4 L227.5 59.5 L230.0 56.2 L232.5 52.8 L235.0 49.8 L237.5 47.3 L240.0 45.7 L242.5 44.9 L245.0 45.0 L247.5 45.8 L250.0 47.2 L252.5 49.1 L255.0 51.1 L257.5 53.2 L260.0 55.4 L262.5 57.4 L265.0 59.3 L267.5 61.0 L270.0 62.6 L272.5 63.9 L275.0 65.1 L277.5 66.1 L280.0 66.9 L282.5 67.6 L285.0 68.2 L287.5 68.6 L290.0 69.0 L292.5 69.2 L295.0 69.5 L297.5 69.6 L300.0 69.7 L302.5 69.8 L305.0 69.9 L307.5 69.9 L310.0 69.9 L312.5 70.0 L315.0 70.0 L317.5 70.0 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 70.0"/></svg><div class="sc-bot"><b>Monophasic</b><span>Illustrative</span></div></div>
+            <div class="sc-raw"><pre></pre></div>
+          </div>
+          <div class="scan-card bi" aria-hidden="true">
+            <div class="sc-clean"><div class="sc-top"><b>Peroneal</b><span>L &middot; #05</span></div><svg class="sc-wave" viewBox="0 0 400 100" preserveAspectRatio="none"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path class="tr" d="M0.0 69.7 L2.5 69.4 L5.0 68.9 L7.5 67.9 L10.0 66.2 L12.5 63.6 L15.0 59.9 L17.5 55.0 L20.0 49.1 L22.5 42.7 L25.0 36.4 L27.5 31.2 L30.0 28.0 L32.5 27.2 L35.0 29.1 L37.5 33.4 L40.0 39.3 L42.5 46.1 L45.0 52.9 L47.5 59.2 L50.0 64.6 L52.5 69.0 L55.0 72.5 L57.5 75.0 L60.0 76.8 L62.5 77.7 L65.0 78.0 L67.5 77.7 L70.0 76.9 L72.5 75.7 L75.0 74.5 L77.5 73.3 L80.0 72.3 L82.5 71.5 L85.0 70.9 L87.5 70.5 L90.0 70.3 L92.5 70.1 L95.0 70.1 L97.5 70.0 L100.0 70.0 L102.5 70.0 L105.0 70.0 L107.5 70.0 L110.0 70.0 L112.5 70.0 L115.0 70.0 L117.5 70.0 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 69.7 L202.5 69.4 L205.0 68.9 L207.5 67.9 L210.0 66.2 L212.5 63.6 L215.0 59.9 L217.5 55.0 L220.0 49.1 L222.5 42.7 L225.0 36.4 L227.5 31.2 L230.0 28.0 L232.5 27.2 L235.0 29.1 L237.5 33.4 L240.0 39.3 L242.5 46.1 L245.0 52.9 L247.5 59.2 L250.0 64.6 L252.5 69.0 L255.0 72.5 L257.5 75.0 L260.0 76.8 L262.5 77.7 L265.0 78.0 L267.5 77.7 L270.0 76.9 L272.5 75.7 L275.0 74.5 L277.5 73.3 L280.0 72.3 L282.5 71.5 L285.0 70.9 L287.5 70.5 L290.0 70.3 L292.5 70.1 L295.0 70.1 L297.5 70.0 L300.0 70.0 L302.5 70.0 L305.0 70.0 L307.5 70.0 L310.0 70.0 L312.5 70.0 L315.0 70.0 L317.5 70.0 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 69.7"/></svg><div class="sc-bot"><b>Biphasic</b><span>Illustrative</span></div></div>
+            <div class="sc-raw"><pre></pre></div>
+          </div>
+          <div class="scan-card tri" aria-hidden="true">
+            <div class="sc-clean"><div class="sc-top"><b>Ant. tibial</b><span>L &middot; #06</span></div><svg class="sc-wave" viewBox="0 0 400 100" preserveAspectRatio="none"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path class="tr" d="M0.0 69.9 L2.5 69.7 L5.0 69.3 L7.5 68.5 L10.0 66.8 L12.5 63.7 L15.0 58.8 L17.5 51.8 L20.0 42.9 L22.5 33.1 L25.0 23.9 L27.5 17.4 L30.0 15.1 L32.5 17.5 L35.0 24.3 L37.5 33.8 L40.0 44.2 L42.5 54.1 L45.0 62.7 L47.5 69.6 L50.0 75.1 L52.5 79.3 L55.0 82.5 L57.5 84.5 L60.0 85.2 L62.5 84.5 L65.0 82.7 L67.5 80.1 L70.0 77.0 L72.5 73.9 L75.0 71.0 L77.5 68.5 L80.0 66.5 L82.5 65.0 L85.0 64.0 L87.5 63.6 L90.0 63.6 L92.5 64.1 L95.0 64.8 L97.5 65.8 L100.0 66.8 L102.5 67.7 L105.0 68.4 L107.5 69.0 L110.0 69.4 L112.5 69.7 L115.0 69.8 L117.5 69.9 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 69.9 L202.5 69.7 L205.0 69.3 L207.5 68.5 L210.0 66.8 L212.5 63.7 L215.0 58.8 L217.5 51.8 L220.0 42.9 L222.5 33.1 L225.0 23.9 L227.5 17.4 L230.0 15.1 L232.5 17.5 L235.0 24.3 L237.5 33.8 L240.0 44.2 L242.5 54.1 L245.0 62.7 L247.5 69.6 L250.0 75.1 L252.5 79.3 L255.0 82.5 L257.5 84.5 L260.0 85.2 L262.5 84.5 L265.0 82.7 L267.5 80.1 L270.0 77.0 L272.5 73.9 L275.0 71.0 L277.5 68.5 L280.0 66.5 L282.5 65.0 L285.0 64.0 L287.5 63.6 L290.0 63.6 L292.5 64.1 L295.0 64.8 L297.5 65.8 L300.0 66.8 L302.5 67.7 L305.0 68.4 L307.5 69.0 L310.0 69.4 L312.5 69.7 L315.0 69.8 L317.5 69.9 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 69.9"/></svg><div class="sc-bot"><b>Triphasic</b><span>Illustrative</span></div></div>
+            <div class="sc-raw"><pre></pre></div>
+          </div>
+          <div class="scan-card mono-w" aria-hidden="true">
+            <div class="sc-clean"><div class="sc-top"><b>Dorsalis pedis</b><span>L &middot; #07</span></div><svg class="sc-wave" viewBox="0 0 400 100" preserveAspectRatio="none"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path class="tr" d="M0.0 70.0 L2.5 70.0 L5.0 69.9 L7.5 69.9 L10.0 69.7 L12.5 69.4 L15.0 68.9 L17.5 68.0 L20.0 66.7 L22.5 64.9 L25.0 62.4 L27.5 59.5 L30.0 56.2 L32.5 52.8 L35.0 49.8 L37.5 47.3 L40.0 45.7 L42.5 44.9 L45.0 45.0 L47.5 45.8 L50.0 47.2 L52.5 49.1 L55.0 51.1 L57.5 53.2 L60.0 55.4 L62.5 57.4 L65.0 59.3 L67.5 61.0 L70.0 62.6 L72.5 63.9 L75.0 65.1 L77.5 66.1 L80.0 66.9 L82.5 67.6 L85.0 68.2 L87.5 68.6 L90.0 69.0 L92.5 69.2 L95.0 69.5 L97.5 69.6 L100.0 69.7 L102.5 69.8 L105.0 69.9 L107.5 69.9 L110.0 69.9 L112.5 70.0 L115.0 70.0 L117.5 70.0 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 70.0 L202.5 70.0 L205.0 69.9 L207.5 69.9 L210.0 69.7 L212.5 69.4 L215.0 68.9 L217.5 68.0 L220.0 66.7 L222.5 64.9 L225.0 62.4 L227.5 59.5 L230.0 56.2 L232.5 52.8 L235.0 49.8 L237.5 47.3 L240.0 45.7 L242.5 44.9 L245.0 45.0 L247.5 45.8 L250.0 47.2 L252.5 49.1 L255.0 51.1 L257.5 53.2 L260.0 55.4 L262.5 57.4 L265.0 59.3 L267.5 61.0 L270.0 62.6 L272.5 63.9 L275.0 65.1 L277.5 66.1 L280.0 66.9 L282.5 67.6 L285.0 68.2 L287.5 68.6 L290.0 69.0 L292.5 69.2 L295.0 69.5 L297.5 69.6 L300.0 69.7 L302.5 69.8 L305.0 69.9 L307.5 69.9 L310.0 69.9 L312.5 70.0 L315.0 70.0 L317.5 70.0 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 70.0"/></svg><div class="sc-bot"><b>Monophasic</b><span>Illustrative</span></div></div>
+            <div class="sc-raw"><pre></pre></div>
+          </div>
+          <div class="scan-card tri" aria-hidden="true">
+            <div class="sc-clean"><div class="sc-top"><b>Peroneal</b><span>R &middot; #08</span></div><svg class="sc-wave" viewBox="0 0 400 100" preserveAspectRatio="none"><line class="ax" x1="0" y1="70" x2="400" y2="70"/><path class="tr" d="M0.0 69.9 L2.5 69.7 L5.0 69.3 L7.5 68.5 L10.0 66.8 L12.5 63.7 L15.0 58.8 L17.5 51.8 L20.0 42.9 L22.5 33.1 L25.0 23.9 L27.5 17.4 L30.0 15.1 L32.5 17.5 L35.0 24.3 L37.5 33.8 L40.0 44.2 L42.5 54.1 L45.0 62.7 L47.5 69.6 L50.0 75.1 L52.5 79.3 L55.0 82.5 L57.5 84.5 L60.0 85.2 L62.5 84.5 L65.0 82.7 L67.5 80.1 L70.0 77.0 L72.5 73.9 L75.0 71.0 L77.5 68.5 L80.0 66.5 L82.5 65.0 L85.0 64.0 L87.5 63.6 L90.0 63.6 L92.5 64.1 L95.0 64.8 L97.5 65.8 L100.0 66.8 L102.5 67.7 L105.0 68.4 L107.5 69.0 L110.0 69.4 L112.5 69.7 L115.0 69.8 L117.5 69.9 L120.0 70.0 L122.5 70.0 L125.0 70.0 L127.5 70.0 L130.0 70.0 L132.5 70.0 L135.0 70.0 L137.5 70.0 L140.0 70.0 L142.5 70.0 L145.0 70.0 L147.5 70.0 L150.0 70.0 L152.5 70.0 L155.0 70.0 L157.5 70.0 L160.0 70.0 L162.5 70.0 L165.0 70.0 L167.5 70.0 L170.0 70.0 L172.5 70.0 L175.0 70.0 L177.5 70.0 L180.0 70.0 L182.5 70.0 L185.0 70.0 L187.5 70.0 L190.0 70.0 L192.5 70.0 L195.0 70.0 L197.5 70.0 L200.0 69.9 L202.5 69.7 L205.0 69.3 L207.5 68.5 L210.0 66.8 L212.5 63.7 L215.0 58.8 L217.5 51.8 L220.0 42.9 L222.5 33.1 L225.0 23.9 L227.5 17.4 L230.0 15.1 L232.5 17.5 L235.0 24.3 L237.5 33.8 L240.0 44.2 L242.5 54.1 L245.0 62.7 L247.5 69.6 L250.0 75.1 L252.5 79.3 L255.0 82.5 L257.5 84.5 L260.0 85.2 L262.5 84.5 L265.0 82.7 L267.5 80.1 L270.0 77.0 L272.5 73.9 L275.0 71.0 L277.5 68.5 L280.0 66.5 L282.5 65.0 L285.0 64.0 L287.5 63.6 L290.0 63.6 L292.5 64.1 L295.0 64.8 L297.5 65.8 L300.0 66.8 L302.5 67.7 L305.0 68.4 L307.5 69.0 L310.0 69.4 L312.5 69.7 L315.0 69.8 L317.5 69.9 L320.0 70.0 L322.5 70.0 L325.0 70.0 L327.5 70.0 L330.0 70.0 L332.5 70.0 L335.0 70.0 L337.5 70.0 L340.0 70.0 L342.5 70.0 L345.0 70.0 L347.5 70.0 L350.0 70.0 L352.5 70.0 L355.0 70.0 L357.5 70.0 L360.0 70.0 L362.5 70.0 L365.0 70.0 L367.5 70.0 L370.0 70.0 L372.5 70.0 L375.0 70.0 L377.5 70.0 L380.0 70.0 L382.5 70.0 L385.0 70.0 L387.5 70.0 L390.0 70.0 L392.5 70.0 L395.0 70.0 L397.5 70.0 L400.0 69.9"/></svg><div class="sc-bot"><b>Triphasic</b><span>Illustrative</span></div></div>
+            <div class="sc-raw"><pre></pre></div>
+          </div>
+      </div>
+      <canvas class="beam-scanner" data-scanner aria-hidden="true"></canvas>
+    </div>
+
+    <div class="wrap">
+      <div class="beam-labels mono" aria-hidden="true"><span>Raw Doppler signal</span><span>Probe</span><span>Waveform</span></div>
+      <div class="hero-copy">
+        <p><strong>A cuff gives you a ratio. Flow gives you a shape.</strong> ImageAiD is developing a portable Doppler platform that captures tibial arterial waveforms at the point of care, with no cuff occlusion.</p>
+        <div class="actions">
+          <a class="btn btn-signal" href="#contact">Get in touch <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn btn-ghost" href="#approach">See the signal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Key facts">
+    <div class="wrap"><ul>
+      <li><b>6.5M+</b><span>U.S. adults 40 and older living with PAD <cite>(CDC)</cite></span></li>
+      <li><b>ABI &gt; 1.40</b><span>Arteries too stiff to compress. The reading can&rsquo;t rule disease out</span></li>
+      <li><b>0</b><span>Cuff inflations at the ankle. Capture is designed to be occlusion-free</span></li>
+    </ul></div>
+  </section>
+
+  <section class="sec" id="problem" aria-labelledby="p-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="mono">The gap</span><h2 id="p-h">The standard screen has a blind spot.</h2><p>The ankle-brachial index is fast and cheap. For the patients who need it most, it&rsquo;s also the least reliable.</p></div>
+      <div class="cards">
+        <article class="card"><span class="k">PAD</span><h3>ABI can miss high-risk patients</h3><p>In diabetes and chronic kidney disease, ABI alone can return false negatives and delay the next test.</p></article>
+        <article class="card electric" data-electric>
+          <div class="eb-inner"><div class="eb-outer"><div class="eb-main"></div></div><div class="eb-g1"></div><div class="eb-g2"></div></div>
+          <div class="eb-ov"></div><div class="eb-bg"></div>
+          <div class="eb-content"><span class="eb-tag">Non-diagnostic</span><span class="k">&gt; 1.40</span><h3>Calcified arteries break the cuff</h3><p>Medial calcification makes vessels noncompressible. The ankle reads high and the ratio stops meaning much.</p></div>
+        </article>
+        <article class="card"><span class="k">Late</span><h3>Late detection raises the stakes</h3><p>Found later, vascular disease is associated with worse outcomes and heavier treatment.</p></article>
+      </div>
+      <p class="src">Sources: <a href="https://www.cdc.gov/heart-disease/about/peripheral-arterial-disease.html" rel="noopener">CDC, About PAD</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10898040/" rel="noopener">Diabetol Metab Syndr 2024</a>.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="approach" aria-labelledby="a-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="mono">Our approach</span><h2 id="a-h">Pressure is a number. Flow has a shape.</h2><p>As disease narrows an artery, the Doppler waveform downstream changes in a recognizable way, and calcification doesn&rsquo;t distort it the way it distorts cuff pressure. That&rsquo;s the signal ImageAiD is built around.</p></div>
+      <div class="waves">
+        <article class="wv tri"><div class="wv-top"><h3>Triphasic</h3><span class="mono">Typical normal</span></div><svg class="sc-wave" viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true"><line class="ax" x1="0" y1="78" x2="400" y2="78"/><path class="tr" d="M0.0 77.9 L2.5 77.7 L5.0 77.3 L7.5 76.3 L10.0 74.4 L12.5 70.9 L15.0 65.4 L17.5 57.5 L20.0 47.5 L22.5 36.4 L25.0 26.1 L27.5 18.7 L30.0 16.1 L32.5 18.8 L35.0 26.4 L37.5 37.1 L40.0 48.9 L42.5 60.1 L45.0 69.7 L47.5 77.5 L50.0 83.7 L52.5 88.5 L55.0 92.1 L57.5 94.3 L60.0 95.1 L62.5 94.4 L65.0 92.3 L67.5 89.4 L70.0 85.9 L72.5 82.4 L75.0 79.1 L77.5 76.3 L80.0 74.1 L82.5 72.4 L85.0 71.3 L87.5 70.7 L90.0 70.8 L92.5 71.3 L95.0 72.2 L97.5 73.3 L100.0 74.4 L102.5 75.4 L105.0 76.2 L107.5 76.9 L110.0 77.3 L112.5 77.6 L115.0 77.8 L117.5 77.9 L120.0 78.0 L122.5 78.0 L125.0 78.0 L127.5 78.0 L130.0 78.0 L132.5 78.0 L135.0 78.0 L137.5 78.0 L140.0 78.0 L142.5 78.0 L145.0 78.0 L147.5 78.0 L150.0 78.0 L152.5 78.0 L155.0 78.0 L157.5 78.0 L160.0 78.0 L162.5 78.0 L165.0 78.0 L167.5 78.0 L170.0 78.0 L172.5 78.0 L175.0 78.0 L177.5 78.0 L180.0 78.0 L182.5 78.0 L185.0 78.0 L187.5 78.0 L190.0 78.0 L192.5 78.0 L195.0 78.0 L197.5 78.0 L200.0 77.9 L202.5 77.7 L205.0 77.3 L207.5 76.3 L210.0 74.4 L212.5 70.9 L215.0 65.4 L217.5 57.5 L220.0 47.5 L222.5 36.4 L225.0 26.1 L227.5 18.7 L230.0 16.1 L232.5 18.8 L235.0 26.4 L237.5 37.1 L240.0 48.9 L242.5 60.1 L245.0 69.7 L247.5 77.5 L250.0 83.7 L252.5 88.5 L255.0 92.1 L257.5 94.3 L260.0 95.1 L262.5 94.4 L265.0 92.3 L267.5 89.4 L270.0 85.9 L272.5 82.4 L275.0 79.1 L277.5 76.3 L280.0 74.1 L282.5 72.4 L285.0 71.3 L287.5 70.7 L290.0 70.8 L292.5 71.3 L295.0 72.2 L297.5 73.3 L300.0 74.4 L302.5 75.4 L305.0 76.2 L307.5 76.9 L310.0 77.3 L312.5 77.6 L315.0 77.8 L317.5 77.9 L320.0 78.0 L322.5 78.0 L325.0 78.0 L327.5 78.0 L330.0 78.0 L332.5 78.0 L335.0 78.0 L337.5 78.0 L340.0 78.0 L342.5 78.0 L345.0 78.0 L347.5 78.0 L350.0 78.0 L352.5 78.0 L355.0 78.0 L357.5 78.0 L360.0 78.0 L362.5 78.0 L365.0 78.0 L367.5 78.0 L370.0 78.0 L372.5 78.0 L375.0 78.0 L377.5 78.0 L380.0 78.0 L382.5 78.0 L385.0 78.0 L387.5 78.0 L390.0 78.0 L392.5 78.0 L395.0 78.0 L397.5 78.0 L400.0 77.9"/></svg><p>Sharp upstroke, brief reversal, small late forward wave.</p></article>
+        <article class="wv bi"><div class="wv-top"><h3>Biphasic</h3><span class="mono">Changing</span></div><svg class="sc-wave" viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true"><line class="ax" x1="0" y1="78" x2="400" y2="78"/><path class="tr" d="M0.0 77.7 L2.5 77.4 L5.0 76.7 L7.5 75.6 L10.0 73.7 L12.5 70.8 L15.0 66.6 L17.5 61.1 L20.0 54.5 L22.5 47.2 L25.0 40.2 L27.5 34.3 L30.0 30.6 L32.5 29.8 L35.0 31.9 L37.5 36.7 L40.0 43.4 L42.5 51.1 L45.0 58.8 L47.5 65.8 L50.0 71.9 L52.5 76.9 L55.0 80.8 L57.5 83.7 L60.0 85.6 L62.5 86.7 L65.0 87.0 L67.5 86.7 L70.0 85.7 L72.5 84.5 L75.0 83.1 L77.5 81.7 L80.0 80.6 L82.5 79.7 L85.0 79.0 L87.5 78.6 L90.0 78.3 L92.5 78.2 L95.0 78.1 L97.5 78.0 L100.0 78.0 L102.5 78.0 L105.0 78.0 L107.5 78.0 L110.0 78.0 L112.5 78.0 L115.0 78.0 L117.5 78.0 L120.0 78.0 L122.5 78.0 L125.0 78.0 L127.5 78.0 L130.0 78.0 L132.5 78.0 L135.0 78.0 L137.5 78.0 L140.0 78.0 L142.5 78.0 L145.0 78.0 L147.5 78.0 L150.0 78.0 L152.5 78.0 L155.0 78.0 L157.5 78.0 L160.0 78.0 L162.5 78.0 L165.0 78.0 L167.5 78.0 L170.0 78.0 L172.5 78.0 L175.0 78.0 L177.5 78.0 L180.0 78.0 L182.5 78.0 L185.0 78.0 L187.5 78.0 L190.0 78.0 L192.5 78.0 L195.0 78.0 L197.5 78.0 L200.0 77.7 L202.5 77.4 L205.0 76.7 L207.5 75.6 L210.0 73.7 L212.5 70.8 L215.0 66.6 L217.5 61.1 L220.0 54.5 L222.5 47.2 L225.0 40.2 L227.5 34.3 L230.0 30.6 L232.5 29.8 L235.0 31.9 L237.5 36.7 L240.0 43.4 L242.5 51.1 L245.0 58.8 L247.5 65.8 L250.0 71.9 L252.5 76.9 L255.0 80.8 L257.5 83.7 L260.0 85.6 L262.5 86.7 L265.0 87.0 L267.5 86.7 L270.0 85.7 L272.5 84.5 L275.0 83.1 L277.5 81.7 L280.0 80.6 L282.5 79.7 L285.0 79.0 L287.5 78.6 L290.0 78.3 L292.5 78.2 L295.0 78.1 L297.5 78.0 L300.0 78.0 L302.5 78.0 L305.0 78.0 L307.5 78.0 L310.0 78.0 L312.5 78.0 L315.0 78.0 L317.5 78.0 L320.0 78.0 L322.5 78.0 L325.0 78.0 L327.5 78.0 L330.0 78.0 L332.5 78.0 L335.0 78.0 L337.5 78.0 L340.0 78.0 L342.5 78.0 L345.0 78.0 L347.5 78.0 L350.0 78.0 L352.5 78.0 L355.0 78.0 L357.5 78.0 L360.0 78.0 L362.5 78.0 L365.0 78.0 L367.5 78.0 L370.0 78.0 L372.5 78.0 L375.0 78.0 L377.5 78.0 L380.0 78.0 L382.5 78.0 L385.0 78.0 L387.5 78.0 L390.0 78.0 L392.5 78.0 L395.0 78.0 L397.5 78.0 L400.0 77.7"/></svg><p>The late forward wave drops out.</p></article>
+        <article class="wv mono-w"><div class="wv-top"><h3>Monophasic</h3><span class="mono">Dampened</span></div><svg class="sc-wave" viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true"><line class="ax" x1="0" y1="78" x2="400" y2="78"/><path class="tr" d="M0.0 78.0 L2.5 78.0 L5.0 77.9 L7.5 77.9 L10.0 77.7 L12.5 77.4 L15.0 76.8 L17.5 75.8 L20.0 74.3 L22.5 72.2 L25.0 69.4 L27.5 66.1 L30.0 62.4 L32.5 58.7 L35.0 55.2 L37.5 52.4 L40.0 50.6 L42.5 49.7 L45.0 49.8 L47.5 50.7 L50.0 52.3 L52.5 54.4 L55.0 56.7 L57.5 59.1 L60.0 61.5 L62.5 63.8 L65.0 65.9 L67.5 67.9 L70.0 69.6 L72.5 71.2 L75.0 72.5 L77.5 73.6 L80.0 74.6 L82.5 75.3 L85.0 76.0 L87.5 76.5 L90.0 76.8 L92.5 77.2 L95.0 77.4 L97.5 77.6 L100.0 77.7 L102.5 77.8 L105.0 77.8 L107.5 77.9 L110.0 77.9 L112.5 78.0 L115.0 78.0 L117.5 78.0 L120.0 78.0 L122.5 78.0 L125.0 78.0 L127.5 78.0 L130.0 78.0 L132.5 78.0 L135.0 78.0 L137.5 78.0 L140.0 78.0 L142.5 78.0 L145.0 78.0 L147.5 78.0 L150.0 78.0 L152.5 78.0 L155.0 78.0 L157.5 78.0 L160.0 78.0 L162.5 78.0 L165.0 78.0 L167.5 78.0 L170.0 78.0 L172.5 78.0 L175.0 78.0 L177.5 78.0 L180.0 78.0 L182.5 78.0 L185.0 78.0 L187.5 78.0 L190.0 78.0 L192.5 78.0 L195.0 78.0 L197.5 78.0 L200.0 78.0 L202.5 78.0 L205.0 77.9 L207.5 77.9 L210.0 77.7 L212.5 77.4 L215.0 76.8 L217.5 75.8 L220.0 74.3 L222.5 72.2 L225.0 69.4 L227.5 66.1 L230.0 62.4 L232.5 58.7 L235.0 55.2 L237.5 52.4 L240.0 50.6 L242.5 49.7 L245.0 49.8 L247.5 50.7 L250.0 52.3 L252.5 54.4 L255.0 56.7 L257.5 59.1 L260.0 61.5 L262.5 63.8 L265.0 65.9 L267.5 67.9 L270.0 69.6 L272.5 71.2 L275.0 72.5 L277.5 73.6 L280.0 74.6 L282.5 75.3 L285.0 76.0 L287.5 76.5 L290.0 76.8 L292.5 77.2 L295.0 77.4 L297.5 77.6 L300.0 77.7 L302.5 77.8 L305.0 77.8 L307.5 77.9 L310.0 77.9 L312.5 78.0 L315.0 78.0 L317.5 78.0 L320.0 78.0 L322.5 78.0 L325.0 78.0 L327.5 78.0 L330.0 78.0 L332.5 78.0 L335.0 78.0 L337.5 78.0 L340.0 78.0 L342.5 78.0 L345.0 78.0 L347.5 78.0 L350.0 78.0 L352.5 78.0 L355.0 78.0 L357.5 78.0 L360.0 78.0 L362.5 78.0 L365.0 78.0 L367.5 78.0 L370.0 78.0 L372.5 78.0 L375.0 78.0 L377.5 78.0 L380.0 78.0 L382.5 78.0 L385.0 78.0 L387.5 78.0 L390.0 78.0 L392.5 78.0 L395.0 78.0 L397.5 78.0 L400.0 78.0"/></svg><p>Slow rise, rounded peak, no reversal.</p></article>
+      </div>
+      <p class="note">Waveforms are simplified illustrations, not output from the ImageAiD platform.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="how" aria-labelledby="hw-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="mono">How it works</span><h2 id="hw-h">Three steps, one visit.</h2></div>
+      <ol class="steps">
+        <li class="step"><h3>Scan</h3><p>A handheld probe captures tibial waveforms in minutes at the point of care. No cuff, no occlusion.</p></li>
+        <li class="step"><h3>Analyze</h3><p>Software-supported waveform interpretation, intended to aid clinical assessment.</p></li>
+        <li class="step"><h3>Act</h3><p>Structured output designed to fit the clinical workflow and follow-up.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="team" aria-labelledby="t-h">
+    <div class="wrap">
+      <div class="sec-head"><span class="mono">Team</span><h2 id="t-h">The people behind it.</h2></div>
+      <span class="team-note mono">Placeholder profiles</span>
+      <ul class="disclose" data-disclose>
+          <li data-active="true"><article tabindex="0">
+            <div class="art" aria-hidden="true"><span>FN</span></div>
+            <h3>Full Name</h3><span class="role">Founder &amp; CEO</span>
+            <p>Background, prior companies, and why they started ImageAiD. Two lines.</p>
+            <a href="#" aria-label="Full Name on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span>LinkedIn</span></a>
+          </article></li>
+          <li><article tabindex="0">
+            <div class="art" aria-hidden="true"><span>FN</span></div>
+            <h3>Full Name</h3><span class="role">Chief Technology Officer</span>
+            <p>Ultrasound and signal processing. Leads hardware and waveform analysis.</p>
+            <a href="#" aria-label="Full Name on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span>LinkedIn</span></a>
+          </article></li>
+          <li><article tabindex="0">
+            <div class="art" aria-hidden="true"><span>FN</span></div>
+            <h3>Full Name</h3><span class="role">Clinical Lead</span>
+            <p>Vascular or podiatric clinician guiding study design and workflow.</p>
+            <a href="#" aria-label="Full Name on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span>LinkedIn</span></a>
+          </article></li>
+          <li><article tabindex="0">
+            <div class="art" aria-hidden="true"><span>FN</span></div>
+            <h3>Full Name</h3><span class="role">Advisor, Vascular Surgery</span>
+            <p>Institution and clinical focus.</p>
+            <a href="#" aria-label="Full Name on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span>LinkedIn</span></a>
+          </article></li>
+          <li><article tabindex="0">
+            <div class="art" aria-hidden="true"><span>FN</span></div>
+            <h3>Full Name</h3><span class="role">Advisor, Regulatory</span>
+            <p>510(k) and De Novo experience with diagnostic ultrasound.</p>
+            <a href="#" aria-label="Full Name on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span>LinkedIn</span></a>
+          </article></li>
+          <li><article tabindex="0">
+            <div class="art" aria-hidden="true"><span>FN</span></div>
+            <h3>Full Name</h3><span class="role">Advisor, Commercial</span>
+            <p>Medtech commercialization and reimbursement strategy.</p>
+            <a href="#" aria-label="Full Name on LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span>LinkedIn</span></a>
+          </article></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact" aria-labelledby="c-h">
+    <div class="wrap split">
+      <div class="sec-head"><span class="mono">Contact</span><h2 id="c-h">Let&rsquo;s talk.</h2><p>We&rsquo;re speaking with clinical partners, health systems, and investors. Tell us a little about yourself.</p></div>
+      <form class="cform" id="contact-form" action="/api/contact" method="post" novalidate>
+        <fieldset class="chips full"><legend>I&rsquo;m reaching out as</legend>
+          <label><input type="radio" name="interest" value="Clinician or clinical site" checked><span>Clinician</span></label>
+          <label><input type="radio" name="interest" value="Health system"><span>Health system</span></label>
+          <label><input type="radio" name="interest" value="Investor"><span>Investor</span></label>
+          <label><input type="radio" name="interest" value="Media"><span>Media</span></label>
+        </fieldset>
+        <div class="cf"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="cf"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+        <div class="cf full"><label for="f-org">Organization</label><input id="f-org" name="organization" autocomplete="organization"></div>
+        <div class="cf full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required></textarea></div>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><div class="button-wrap"><button class="glass-btn" type="submit"><span>Send message</span></button><div class="button-shadow"></div></div></div>
+        <p class="fine full">Please don&rsquo;t include patient or other protected health information.</p>
+        <p class="form-status full" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="inner">
+    <div class="wrap">
+      <div class="top">
+        <a class="brand" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#24495e" stroke="#3fd0bd" stroke-opacity=".5"/><path d="M4.5 17h5l2-6 3.5 11 3-9 1.6 4H27.5" fill="none" stroke="#3fd0bd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Image<i>AiD</i></b></a>
+        <nav aria-label="Footer"><a href="#problem">Problem</a><a href="#approach">Approach</a><a href="#how">How it works</a><a href="#team">Team</a><a href="mailto:hello@imageaid.us">hello@imageaid.us</a></nav>
+      </div>
+      <p class="disc"><strong>Caution: investigational device.</strong> The ImageAiD platform is in development. It has not been cleared or approved by the U.S. FDA and is not available for sale. Statements on this site describe design goals, not demonstrated safety or effectiveness.</p>
+      <p class="credits">&copy; 2026 ImageAiD. Interface techniques adapted from CodePen pens by <a href="https://codepen.io/blacklead-studio/pen/xbwaqxE">BL/S Studio</a>, <a href="https://codepen.io/simeydotme/pen/PwwYZOe">Simon Goellner</a>, <a href="https://codepen.io/BalintFerenczy/pen/KwdoyEN">B&aacute;lint Ferenczy</a>, <a href="https://codepen.io/Petr-Knoll/pen/QwWLZdx">Petr Knoll</a>, and <a href="https://codepen.io/jh3y/pen/XJWNMOO">Jhey Tompkins</a>.</p>
+    </div>
+  </div>
+</footer>
+<script src="v3.js" defer></script>
+</body>
+</html>
