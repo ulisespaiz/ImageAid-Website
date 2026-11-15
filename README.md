@@ -13,6 +13,8 @@ The hero "card beam" (raw Doppler data scanned into waveform cards) is adapted f
 | `thanks.html` | Post-submit page for the no-JS form path |
 | `functions/api/contact.js` | Cloudflare Pages Function that handles the contact form |
 | `_headers` | Security headers (CSP, HSTS, etc.) and cache rules |
+| `robots.txt` | Crawl rules: open to search engines and AI crawlers (named explicitly), `/api/` and the thanks page excluded |
+| `llms.txt` | Plain-language summary of the company for AI assistants ([llmstxt.org](https://llmstxt.org)). Keep it in step with the page copy |
 
 Header and footer markup is repeated in all three HTML files. When you change a nav link, change it in every file.
 
@@ -51,6 +53,8 @@ printf "%s" "document.documentElement.classList.replace('no-js', 'js');" | opens
 - [ ] Update the brand colors in `:root` of `assets/css/styles.css` (`--signal`, `--brand`, `--bg`); the scanner glow colors live in `assets/js/main.js` (search `63,208,189`)
 - [ ] Replace `hello@imageaid.us` (index, footer, main.js error message)
 - [ ] Add `<link rel="canonical">` and `og:url` for the new domain; regenerate `assets/img/og.png`
+- [ ] Remove `<meta name="robots" content="noindex">` from `index.html` and `team.html` (keep it on `thanks.html`); until then search engines and AI search won't list the site
+- [ ] Add a `sitemap.xml` with the final domain and uncomment the `Sitemap:` line in `robots.txt`; update the email in `llms.txt`
 - [ ] 301-redirect the old domain to the new one (Cloudflare Bulk Redirects or a Pages `_redirects` rule on the old zone)
 
 ## Content still needed from the client

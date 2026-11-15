@@ -1,0 +1,32 @@
+# Arterial Intelligence
+
+> Arterial Intelligence is a vascular diagnostics company developing a noninvasive, point-of-care Doppler platform designed to support vascular assessment for peripheral artery disease (PAD). It works independent of pressure ratios and cuff occlusion. The platform is an investigational device: it has not been cleared or approved by the U.S. FDA and is not available for sale in the United States.
+
+## The problem
+
+- 21M+ U.S. adults are estimated to have peripheral artery disease (PAD).
+- 1/3 of PAD patients have arteries too stiff to compress, causing current tests to fail.
+- 30% of PAD patients are dead within 5 years because their disease is caught too late.
+- The ankle-brachial index (ABI) is fast and cheap, but in patients with calcified, noncompressible arteries (common in diabetes and chronic kidney disease) it can be unreliable or inconclusive.
+
+## The approach
+
+- As disease narrows an artery, the Doppler waveform downstream changes in a recognizable way, and calcification doesn't distort it the way it distorts cuff pressure. Arterial Intelligence is built around that signal.
+- Three steps in one visit: Scan (a handheld probe captures arterial waveforms in minutes at the point of care), Analyze (software-supported waveform interpretation intended to aid clinical assessment), Act (structured output designed to fit the clinical workflow and help prepare guideline-directed next steps).
+- Designed for primary care, podiatry, wound clinics and health systems.
+
+## Team
+
+- Josh Hanson, Chief Executive Officer: Stanford Biodesign trained; Mayo Clinic Gonda Vascular Center.
+- Alex Richardson, Chief Technology Officer: engineer for DARPA, Medtronic and Abbott; $100M raised and 3 medtech exits.
+- Chris Galando, Head of Commercialization: 20+ years in sales leadership; led cardiovascular sales for Johnson & Johnson and Stryker.
+- Robert McBane, MD, Chair of the Scientific Advisory Board: 25+ years in cardiovascular medicine at Mayo Clinic; 200+ publications; Master of the Society for Vascular Medicine.
+
+## Pages
+
+- [Home](/): the problem, the approach, how it works, who it is for, and contact
+- [Team](/team.html): leadership and advisors
+
+## Contact
+
+- Clinical partners, health systems, investors and media: use the contact form on the home page ([/#contact](/#contact)) or email hello@imageaid.us

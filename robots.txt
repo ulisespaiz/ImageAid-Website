@@ -1,2 +1,30 @@
+# Arterial Intelligence
+# Search engines and AI assistants are welcome to read this site.
+# A summary written for AI tools is at /llms.txt
+
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /thanks.html
+
+# AI crawlers and assistants, listed by name so the intent is explicit
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /api/
+Disallow: /thanks.html
+
+# TODO(domain): add the sitemap once the final domain is set, e.g.
+# Sitemap: https://NEW-DOMAIN/sitemap.xml
