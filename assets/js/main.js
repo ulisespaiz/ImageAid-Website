@@ -1,4 +1,4 @@
-// ImageAiD site behaviour. Progressive enhancement: pages read fine without JS.
+// Arterial Intelligence site behaviour. Progressive enhancement: pages read fine without JS.
 // Hero card beam adapted from Card Beam Animation by BL/S Studio (CodePen, MIT).
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
