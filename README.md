@@ -1,4 +1,4 @@
-# ImageAiD website (redesign concept)
+# Arterial Intelligence website (redesign concept)
 
 Mobile-first static site: plain HTML, CSS, and vanilla JS. No build step, no framework, no third-party requests (fonts are self-hosted: Montserrat for text, JetBrains Mono for labels, both SIL OFL). Deploys to Cloudflare Pages as is.
 
@@ -47,8 +47,7 @@ printf "%s" "document.documentElement.classList.replace('no-js', 'js');" | opens
 
 ## Rebrand checklist (once the new name and logo arrive)
 
-- [ ] Find/replace `ImageAiD` in `*.html`, `functions/`, and this README
-- [ ] Swap the inline SVG mark (`.brand-mark`) in each page header/footer, and replace `assets/img/favicon.svg`
+- [ ] Logo: the mark is a raster crop of the client's logo (`assets/img/logo-mark.png`, plus `favicon.png`, `apple-touch-icon.png`, `logo.png`). Swap in an SVG when the client has one
 - [ ] Update the brand colors in `:root` of `assets/css/styles.css` (`--signal`, `--brand`, `--bg`); the scanner glow colors live in `assets/js/main.js` (search `63,208,189`)
 - [ ] Replace `hello@imageaid.us` (index, footer, main.js error message)
 - [ ] Add `<link rel="canonical">` and `og:url` for the new domain; regenerate `assets/img/og.png`

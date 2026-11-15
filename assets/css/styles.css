@@ -1,4 +1,4 @@
-/* ImageAiD — mobile-first stylesheet.
+/* Arterial Intelligence — mobile-first stylesheet.
    Hero "card beam" adapted from Card Beam Animation by BL/S Studio
    (codepen.io/blacklead-studio/pen/xbwaqxE, MIT). Breakpoints: 760px, 1080px. */
 
@@ -56,9 +56,10 @@ ul, ol.steps { margin: 0; padding: 0; list-style: none; }
 .hdr.scrolled { background: rgb(4 8 9 / .72); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); border-color: var(--line); }
 .hdr .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand svg { width: 30px; height: 30px; }
-.brand b { font-size: 1.15rem; letter-spacing: -0.02em; }
-.brand b i { font-style: normal; color: var(--signal); }
+.brand img { width: 36px; height: 36px; flex: none; }
+.wordmark { display: grid; justify-items: start; line-height: 1; text-transform: uppercase; }
+.wordmark b { font-size: 1.0625rem; font-weight: 500; letter-spacing: .19em; color: #132942; }
+.wordmark span { margin-top: 4px; font-size: .625rem; font-weight: 400; letter-spacing: .32em; color: #717d8a; }
 .nav { display: none; }
 .menu-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: rgb(255 255 255 / .04); color: var(--text); font: 600 .875rem var(--sans); cursor: pointer; }
 .menu-btn .bars { width: 16px; height: 10px; position: relative; }
@@ -266,6 +267,12 @@ body.locked { overflow: hidden; }
 .icon-link { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line); color: var(--text-2); }
 .icon-link:hover { color: var(--text); border-color: rgb(255 255 255 / .3); }
 .team-cta { margin-top: 20px; }
+.orgs { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px solid var(--line); list-style: none; }
+.orgs li { padding: 4px 10px; border-radius: 999px; background: rgb(19 41 66 / .06); color: #132942; font-size: .75rem; font-weight: 600; }
+.org-strip { margin: 0 0 22px; padding: 16px 0; border-block: 1px solid var(--line); display: grid; gap: 10px; }
+.org-strip .mono { color: var(--text-2); }
+.org-strip ul { display: flex; flex-wrap: wrap; gap: 6px 26px; }
+.org-strip li { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; color: #132942; opacity: .72; }
 .page-hero { padding: 120px 0 48px; border-bottom: 1px solid var(--line); }
 .page-hero h1 { font-size: clamp(2.3rem, 1.2rem + 5vw, 4.6rem); margin: 14px 0 12px; }
 .page-hero p { color: var(--text-2); max-width: 52ch; margin: 0; }
@@ -297,7 +304,6 @@ body.locked { overflow: hidden; }
 /* ================= Light theme overrides (original-site look) ================= */
 .hdr, .hdr.scrolled { background: rgb(255 255 255 / .94); -webkit-backdrop-filter: saturate(160%) blur(10px); backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
 .hdr.scrolled { box-shadow: 0 6px 20px -12px rgb(15 20 25 / .25); }
-.brand b { color: var(--brand); }
 .menu-btn { background: #fff; }
 .btn { border-radius: 10px; }
 .btn-signal { background: var(--brand); color: #fff; box-shadow: 0 10px 24px -10px rgb(36 73 94 / .65); }
