@@ -59,3 +59,7 @@ printf "%s" "document.documentElement.classList.replace('no-js', 'js');" | opens
 - [ ] Final logo files (SVG preferred) and brand colors
 - [ ] Public contact address
 - [ ] Regulatory review of all claims and of the footer disclaimer
+
+## Company logos (team section)
+
+`assets/img/logos/` holds the past-employer logos shown on the team cards and in the "Experience from" row. Mayo Clinic, DARPA, Medtronic, Abbott, Johnson & Johnson and Stryker come from Wikimedia Commons; Stanford Biodesign from biodesign.stanford.edu (anniversary badge cropped off); SVM was extracted from the client's team slide. They render grayscale and go full color on hover. Swap in the client's own files if they have them, and confirm each organization allows its logo to be used this way.
