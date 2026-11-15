@@ -60,4 +60,3 @@ printf "%s" "document.documentElement.classList.replace('no-js', 'js');" | opens
 - [ ] Final logo files (SVG preferred) and brand colors
 - [ ] Public contact address
 - [ ] Regulatory review of all claims and of the footer disclaimer
-- [ ] Source each stat in the key-facts strip (21M+ PAD, 1/3 noncompressible, 30% five-year mortality); see the TODO in `index.html`
