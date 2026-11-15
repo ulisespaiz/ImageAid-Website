@@ -1,6 +1,6 @@
 # ImageAiD website (redesign concept)
 
-Mobile-first static site: plain HTML, CSS, and vanilla JS. No build step, no framework, no third-party requests (fonts are self-hosted). Deploys to Cloudflare Pages as is.
+Mobile-first static site: plain HTML, CSS, and vanilla JS. No build step, no framework, no third-party requests (fonts are self-hosted: Montserrat for text, JetBrains Mono for labels, both SIL OFL). Deploys to Cloudflare Pages as is.
 
 The hero "card beam" (raw Doppler data scanned into waveform cards) is adapted from [Card Beam Animation](https://codepen.io/blacklead-studio/pen/xbwaqxE) by BL/S Studio, a public CodePen pen under CodePen's default MIT license. It runs on plain canvas, pauses when off-screen, and renders a static frame for visitors with reduced motion turned on.
 
@@ -56,9 +56,8 @@ printf "%s" "document.documentElement.classList.replace('no-js', 'js');" | opens
 
 ## Content still needed from the client
 
-- [ ] Team: names, titles, 2-line bios, headshots (square, at least 400px), LinkedIn URLs, and whether to show advisors
+- [ ] Team: the rest of the team (four profiles are in). Headshots go in `assets/img/team/` as 4:5 WebP, 640x800 if the source allows; LinkedIn URLs if wanted
 - [ ] Final logo files (SVG preferred) and brand colors
 - [ ] Public contact address
 - [ ] Regulatory review of all claims and of the footer disclaimer
-- [ ] Confirm or source each stat; currently CDC (PAD prevalence) and the ABI > 1.40 threshold
-- [ ] Proof points for the milestones strip on the home page (grant or funding round, patent status, partner site or study), plus any logos they're allowed to show
+- [ ] Source each stat in the key-facts strip (21M+ PAD, 1/3 noncompressible, 30% five-year mortality); see the TODO in `index.html`
