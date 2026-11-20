@@ -51,7 +51,7 @@ printf "%s" "document.documentElement.classList.replace('no-js', 'js');" | opens
 
 - [ ] Logo: the mark is a raster crop of the client's logo (`assets/img/logo-mark.png`, plus `favicon.png`, `apple-touch-icon.png`, `logo.png`). Swap in an SVG when the client has one
 - [ ] Update the brand colors in `:root` of `assets/css/styles.css` (`--signal`, `--brand`, `--bg`); the scanner glow colors live in `assets/js/main.js` (search `63,208,189`)
-- [ ] Replace `hello@imageaid.us` (index, footer, main.js error message)
+- [x] Contact address is `hello@arterialintelligence.com` (footer on every page, main.js error message, llms.txt)
 - [ ] Add `<link rel="canonical">` and `og:url` for the new domain; regenerate `assets/img/og.png`
 - [ ] Remove `<meta name="robots" content="noindex">` from `index.html` and `team.html` (keep it on `thanks.html`); until then search engines and AI search won't list the site
 - [ ] Add a `sitemap.xml` with the final domain and uncomment the `Sitemap:` line in `robots.txt`; update the email in `llms.txt`
