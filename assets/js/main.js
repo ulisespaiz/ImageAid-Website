@@ -253,7 +253,7 @@
         const data = await res.json().catch(() => ({}));
         if (!res.ok || !data.ok) throw new Error();
         form.reset(); show('Thanks, we got your message and will be in touch soon.', true);
-      } catch { show('Something went wrong. Please email hello@imageaid.us instead.', false); }
+      } catch { show('Something went wrong. Please email hello@arterialintelligence.com instead.', false); }
       finally { btn.textContent = label; }
     });
   }
